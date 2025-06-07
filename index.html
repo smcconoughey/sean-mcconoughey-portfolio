@@ -627,6 +627,7 @@
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#media">Media</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -647,7 +648,12 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Sean McConoughey<br><span>Aerospace Engineering Portfolio</span></h1>
-                <p>🚀 Aerospace Engineering student at Embry-Riddle Aeronautical University specializing in propulsion systems, cyber-physical resilience, and autonomous system security. My work spans hardware design, embedded systems, GN&C modeling, software security tooling, and original academic research.</p>
+                <p>🚀 Aerospace Engineering student at Embry-Riddle Aeronautical University specializing in propulsion systems, cyber-physical resilience, and autonomous system security. <strong>NASA Student Launch Altitude Award Winner</strong> and published researcher in GNSS spoofing detection for autonomous systems.</p>
+                <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; border-left: 4px solid #ff6600;">
+                    <p style="margin: 0; font-size: 0.95rem; font-weight: 500;">🏆 Led ResistoJets to first place "Altitude Award" in 2024 NASA Student Launch Competition<br>
+                    📰 Featured in News 12 New Jersey and NASA official coverage<br>
+                    📝 First-author research paper submitted to AIAA SciTech 2026</p>
+                </div>
                 <a href="#projects" class="btn">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get In Touch</a>
             </div>
@@ -685,13 +691,15 @@
                         <div style="background: linear-gradient(135deg, #003366, #0099cc); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🛰</div>
                     </div>
                     <div class="research-card-content">
-                        <h3>Sensor Spoofing Detection for Autonomous Systems</h3>
-                        <p><strong>Role:</strong> Researcher (First Author)<br>
-                        <strong>Timeframe:</strong> Feb 2025 – Present</p>
-                        <p>Developed software-only defense mechanism for detecting spoofing in autonomous systems. Implemented 4-state Extended Kalman Filter with predictive Mahalanobis funnel for trajectory estimation and dynamic tube gating logic for divergence detection.</p>
-                        <p><strong>Impact:</strong> Results submitted to AIAA SciTech 2026 as first-author paper</p>
+                        <h3>GNSS Spoofing Detection via EKF-Based State Prediction</h3>
+                        <p><strong>Role:</strong> Lead Researcher (First Author)<br>
+                        <strong>Co-Author:</strong> Dr. Cagri Kilic<br>
+                        <strong>Timeframe:</strong> Feb 2024 – Present</p>
+                        <p><strong>Paper Title:</strong> "Detecting GNSS Spoofing in Robotic Systems via EKF-Based State Prediction and Derivative Analysis"</p>
+                        <p>Developed novel software-only defense using 4-state Extended Kalman Filter with funnel monitor and derivative-based velocity checks. Achieved 100% detection rate in Monte Carlo simulations with mean alert times of 0.280 ± 0.57s (Mahalanobis) and 0.00015 ± 0.0014s (velocity).</p>
+                        <p><strong>Status:</strong> <span style="color: #ff6600; font-weight: bold;">Submitted to AIAA SciTech 2026</span></p>
                         <div style="margin-top: 1rem;">
-                            <strong>Technologies:</strong> Python, NumPy, SciPy, Kalman Filtering, GNSS Simulation
+                            <strong>Technologies:</strong> Extended Kalman Filter, GNSS, Monte Carlo Simulation, Cyber-Resilient Autonomy
                         </div>
                     </div>
                 </div>
@@ -734,12 +742,13 @@
                         <div style="background: linear-gradient(135deg, #0099cc, #ff6600); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">🚀 NASA</div>
                     </div>
                     <div class="research-card-content">
-                        <h3>NASA Student Launch – Team Lead</h3>
+                        <h3>NASA Student Launch – Team Lead & Winner</h3>
                         <p><strong>Organization:</strong> Morris County 4-H / ResistoJets Rocketry<br>
-                        <strong>Timeframe:</strong> Aug 2022 – May 2024</p>
-                        <p>Led two full NASA SLI cycles, including Project Hermes and Project Stardust. Managed proposal writing, payload development, vehicle integration, and review board presentations. Coordinated over $40,000 in fundraising.</p>
+                        <strong>Timeframe:</strong> Aug 2022 – May 2024<br>
+                        <strong>🏆 Achievement:</strong> <span style="color: #ff6600; font-weight: bold;">Altitude Award Winner 2024</span></p>
+                        <p>Led the only team from New Jersey in NASA's prestigious Student Launch Initiative. Won first place "Altitude Award" in middle/high school division, landing just 43 feet from target altitude of 3,900 feet. Featured in <a href="https://newjersey.news12.com/jersey-proud-teen-rocket-engineers-hope-to-be-part-of-nasa-one-day" target="_blank" style="color: #0099cc;">News 12 New Jersey</a> and <a href="https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/" target="_blank" style="color: #0099cc;">Rutgers NJAES News</a>.</p>
                         <div style="margin-top: 1rem;">
-                            <strong>Technologies:</strong> Fusion 360, SolidWorks, Autodesk Simulation, C++, Python
+                            <strong>Technologies:</strong> Fusion 360, SolidWorks, High-Powered Rocketry, Payload Integration
                         </div>
                     </div>
                 </div>
@@ -751,12 +760,48 @@
                     <div class="research-card-content">
                         <h3>American Rocketry Challenge – Founder & Lead</h3>
                         <p><strong>Organization:</strong> Morris County 4-H / ResistoJets Rocketry<br>
-                        <strong>Timeframe:</strong> Oct 2021 – Apr 2023</p>
-                        <p>Founded team with goal of qualifying for NASA Student Launch. Finished top 25 out of 800+ nationally. Managed entire lifecycle from CAD to launch to press coverage.</p>
+                        <strong>Timeframe:</strong> Oct 2021 – Apr 2023<br>
+                        <strong>🏆 Achievement:</strong> <span style="color: #ff6600; font-weight: bold;">Top 25 Nationally</span></p>
+                        <p>Founded the ResistoJets team from scratch with the ambitious goal of qualifying for NASA Student Launch. Successfully achieved top 25 finish out of 800+ teams nationally, demonstrating exceptional leadership and technical execution. This achievement directly led to NASA SLI acceptance.</p>
                         <div style="margin-top: 1rem;">
-                            <strong>Skills:</strong> Rocket Stability, Systems Design, Project Planning, Mentorship
+                            <strong>Skills:</strong> Team Founding, Rocket Stability, Systems Design, Project Planning, Media Relations
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="media">
+        <div class="container">
+            <div class="section-title">
+                <h2>Media Coverage & Recognition</h2>
+            </div>
+            <div class="section-subtitle">
+                <p>External recognition of aerospace engineering achievements and leadership</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #003366; margin-bottom: 1rem;">📺 News 12 New Jersey Feature</h3>
+                    <p style="color: #ff6600; font-weight: 600; margin-bottom: 1rem;">"Jersey Proud: Teen rocket engineers hope to be part of NASA one day"</p>
+                    <p>Featured as part of the "Jersey Proud" series highlighting exceptional New Jersey students. Coverage focused on the ResistoJets team's unique position as the only team like it in New Jersey preparing for NASA's Student Launch Initiative.</p>
+                    <a href="https://newjersey.news12.com/jersey-proud-teen-rocket-engineers-hope-to-be-part-of-nasa-one-day" target="_blank" style="color: #0099cc; text-decoration: none; font-weight: 600;">View Coverage →</a>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #003366; margin-bottom: 1rem;">🏆 Rutgers NJAES News</h3>
+                    <p style="color: #ff6600; font-weight: 600; margin-bottom: 1rem;">"4-H ResistoJets Rocketry Club Wins 'Altitude Award'"</p>
+                    <p>Official university coverage of the team's first place "Altitude Award" achievement in the 2024 NASA Student Launch Competition, highlighting the precision landing just 43 feet from target altitude.</p>
+                    <a href="https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/" target="_blank" style="color: #0099cc; text-decoration: none; font-weight: 600;">View Coverage →</a>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #003366; margin-bottom: 1rem;">🚀 NASA Official Coverage</h3>
+                    <p style="color: #ff6600; font-weight: 600; margin-bottom: 1rem;">"Rockets Soar During NASA Student Launch Competition"</p>
+                    <p>Featured in official NASA coverage of the Student Launch competition at Marshall Space Flight Center, highlighting the achievements of over 1,000 students from across the U.S. and Puerto Rico.</p>
+                    <a href="https://www.nasa.gov/centers-and-facilities/marshall/rockets-soar-during-nasa-student-launch-competition/" target="_blank" style="color: #0099cc; text-decoration: none; font-weight: 600;">View Coverage →</a>
                 </div>
             </div>
         </div>
