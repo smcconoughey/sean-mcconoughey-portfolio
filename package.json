@@ -1,0 +1,24 @@
+{
+    "name": "sean-mcconoughey-portfolio",
+    "version": "1.0.0",
+    "description": "Sean McConoughey's Aerospace Engineering Portfolio Website",
+    "main": "index.js",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview"
+    },
+    "keywords": [
+      "aerospace",
+      "engineering",
+      "portfolio",
+      "propulsion",
+      "cybersecurity",
+      "website"
+    ],
+    "author": "Sean McConoughey",
+    "license": "MIT",
+    "devDependencies": {
+      "vite": "^4.5.0"
+    }
+  }
