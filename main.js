@@ -58,6 +58,45 @@ function toggleDetails(button) {
 // Make toggleDetails function globally available
 window.toggleDetails = toggleDetails;
 
+// Image lightbox functionality
+function openLightbox(src, alt) {
+    const modal = document.getElementById('lightboxModal');
+    const image = document.getElementById('lightboxImage');
+    
+    image.src = src;
+    image.alt = alt;
+    modal.style.display = 'block';
+    
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('lightboxModal');
+    modal.style.display = 'none';
+    
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+// Close lightbox when clicking outside the image
+document.getElementById('lightboxModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
+// Make lightbox functions globally available
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+
 const portalBlue = document.querySelector('.hero-portal-blue');
 const portalOrange = document.querySelector('.hero-portal-orange');
 

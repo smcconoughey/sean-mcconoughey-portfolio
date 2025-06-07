@@ -593,6 +593,79 @@
             background: var(--accent-color);
         }
 
+        /* Achievement cards responsive */
+        @media (max-width: 1200px) {
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .achievements-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Image lightbox modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .lightbox-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: #ff6600;
+        }
+
+        .clickable-image {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .clickable-image:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         /* Responsive */
         @media screen and (max-width: 768px) {
             .menu-toggle {
@@ -684,11 +757,11 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Sean McConoughey<br><span>Aerospace Engineering Portfolio</span></h1>
-                <p>I'm Sean McConoughey, an Aerospace Engineering student at Embry-Riddle Aeronautical University. I serve as <strong>Electronics Lead and PR Officer</strong> for the Experimental Rocket Propulsion Lab (ERPL), and I'm the <strong>first author</strong> of a submitted SciTech paper on spoofing detection in autonomous systems. My work spans propulsion system development, cyber-physical security tooling, and autonomous navigation integrity—positioning me at the intersection of real-world engineering and applied research.</p>
+                <p>Sean McConoughey is an Aerospace Engineering student at Embry-Riddle Aeronautical University specializing in propulsion systems, cyber-physical resilience, and autonomous system security. I currently serve as <strong>Public Relations Officer and Electronics Lead</strong> for the Experimental Rocket Propulsion Lab (ERPL) and work as a researcher in multiple ERAU cybersecurity and autonomy labs. I am the <strong>first author</strong> of a SciTech-submitted paper on spoofing detection in robotic systems and have built systems for high-assurance embedded vulnerability scanning, and am authoring a paper demonstrating the use of local LLMs in Aviation SOC operations. This site is both a portfolio and a technical archive, intended to document my contributions and research.</p>
                 <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; border-left: 4px solid #ff6600;">
-                    <p style="margin: 0; font-size: 0.95rem; font-weight: 500;">🏆 1st Place NASA Student Launch "Altitude Award" Winner (2024)<br>
-                    📝 First-author research paper submitted to AIAA SciTech 2026<br>
-                    🚀 Electronics Lead for live rocket engine hotfire testing at ERPL</p>
+                    <p style="margin: 0; font-size: 0.95rem; font-weight: 500;">• 1st Place NASA Student Launch "Altitude Award" Winner (2024)<br>
+                    • First-author research paper submitted to AIAA SciTech 2026<br>
+                    • Electronics Lead for live rocket engine hotfire testing at ERPL</p>
                 </div>
                 <a href="#projects" class="btn">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -708,27 +781,33 @@
             <div class="research-grid">
                 <div class="research-card">
                     <div class="research-card-img">
-                        <img src="./assets/hotfire 3-8.jpg" alt="Liquid rocket engine hotfire test showing flame exhaust" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="background: linear-gradient(135deg, #ff6600, #ff9933); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 3rem;">🚀</div>
+                        <img src="./assets/hotfire 3-8.jpg" alt="Liquid rocket engine hotfire test showing flame exhaust" class="clickable-image" style="width: 100%; height: 200px; object-fit: cover;" onclick="openLightbox(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="background: linear-gradient(135deg, #ff6600, #ff9933); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">ROCKET ENGINE</div>
                     </div>
                     <div class="research-card-content">
                         <h3>Liquid Rocket Engine Development & Hotfire Testing</h3>
-                        <p class="project-summary">Electronics Lead for ERPL's Project Triton — the most powerful rocket engine in club history. Named in official Embry-Riddle coverage for monitoring system status during historic 1,000-pound thrust engine test at Cecil Spaceport.</p>
+                        <p class="project-summary">Club Lead, Electronics Lead & Ground Controller for ERPL's liquid rocket engines including Project Triton. Design, build, and operate student-developed engines toward a record-breaking flight vehicle.</p>
                         <div class="project-details" style="display: none;">
-                            <p><strong>Role:</strong> Electronics Lead (ERPL), Embry-Riddle Aeronautical University<br>
+                            <p><strong>Role:</strong> Club Lead, Electronics Lead & Ground Controller<br>
+                            <strong>Lab:</strong> Experimental Rocket Propulsion Lab (ERPL)<br>
                             <strong>Timeframe:</strong> Sept 2024 – Present</p>
-                            <p><strong>Project Triton Achievements:</strong></p>
+                            
+                            <p><strong>Objective:</strong> Design, build, and operate student-developed liquid rocket engines and a record breaking flight-vehicle.</p>
+                            
+                            <p><strong>Key Contributions:</strong></p>
                             <ul>
-                                <li><strong>Project Triton Engine</strong> — ERPL's most powerful rocket engine tested to date, designed for ~1,000 pounds of thrust</li>
-                                <li><strong>Historic Hot Fire Test</strong> at Cecil Spaceport in Jacksonville, Florida using ethanol and liquid oxygen propellants</li>
-                                <li><strong>Official University Recognition</strong> — featured in <a href="https://news.erau.edu/headlines/hot-fire-test" target="_blank" style="color: #0099cc;">Embry-Riddle News</a> as key team member</li>
-                                <li><strong>Built full avionics suite and DAQ</strong> for regeneratively cooled bipropellant engine systems</li>
-                                <li><strong>Led system monitoring operations</strong> during live hot fire testing with comprehensive safety protocols</li>
-                                <li><strong>Managed ground controller operations</strong> and supported critical systems integration</li>
-                                <li>Developed real-time telemetry and data acquisition systems for engine performance analysis</li>
+                                <li><strong>Led electronics team</strong> and managed overall club operations and planning</li>
+                                <li><strong>Led design of avionics and telemetry systems</strong> for hotfire testing</li>
+                                <li><strong>Developed GUI for engine monitoring</strong> with abort protocol and sensor integration</li>
+                                <li><strong>Conducted hotfire testing at Cecil Spaceport</strong> as Ground Controller</li>
+                                <li><strong>Integrated PTs, load cells, solenoids, and thermocouples</strong> through Teensy DAQ stack</li>
+                                <li><strong>Coordinated test readiness, safety walkthroughs,</strong> and systems validation</li>
+                                <li><strong>Official University Recognition</strong> — featured in <a href="https://news.erau.edu/headlines/hot-fire-test" target="_blank" style="color: #0099cc;">Embry-Riddle News</a> for Project Triton</li>
                             </ul>
-                            <p><strong>Project Impact:</strong> Project Triton represents a three-fold increase in thrust capability compared to ERPL's previous liquid engines, setting new records for design, manufacturing, and test timeline in the club's history.</p>
-                            <p><strong>Technologies:</strong> C++, Python, CAN bus, Teensy 4.1, Fusion 360, Data Acquisition Systems, Ethanol/LOX Propulsion</p>
+                            
+                            <p><strong>Technologies:</strong> C++, Python, CAN bus, Teensy 4.1, Fusion 360, Ethanol/LOX engine design, regeneratively cooled chambers</p>
+                            
+                            <p><strong>Skills:</strong> Propulsion · Avionics · Systems Integration · Live Test Operations · Instrumentation · Embedded Systems</p>
                         </div>
                         <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
@@ -736,26 +815,37 @@
 
                 <div class="research-card">
                     <div class="research-card-img">
-                        <img src="./assets/Space-Robotics-Sim.jpeg" alt="Space robotics simulation environment for GNSS spoofing research" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="background: linear-gradient(135deg, #003366, #0099cc); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 3rem;">🛰</div>
+                        <img src="./assets/Space-Robotics-Sim.jpeg" alt="Space robotics simulation environment for GNSS spoofing research" class="clickable-image" style="width: 100%; height: 200px; object-fit: cover;" onclick="openLightbox(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="background: linear-gradient(135deg, #003366, #0099cc); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">RESEARCH</div>
                     </div>
                     <div class="research-card-content">
-                        <h3>GNSS Spoofing Detection via EKF-Based State Prediction</h3>
-                        <p class="project-summary">First-author research developing novel software-only GNSS spoofing defense using Extended Kalman Filter. Achieved 100% detection rate in Monte Carlo simulations with sub-second response times.</p>
+                        <h3>Sensor Spoofing Detection for Robotic Systems</h3>
+                        <p class="project-summary">Research Assistant – Lead Developer & First Author developing lightweight state-prediction framework to detect sensor spoofing in autonomous systems, tested on GNSS spoofing cases.</p>
                         <div class="project-details" style="display: none;">
-                            <p><strong>Role:</strong> Lead Researcher (First Author)<br>
-                            <strong>Co-Author:</strong> Dr. Cagri Kilic<br>
-                            <strong>Timeframe:</strong> Feb 2024 – Present</p>
-                            <p><strong>Paper Title:</strong> "Detecting GNSS Spoofing in Robotic Systems via EKF-Based State Prediction and Derivative Analysis"</p>
-                            <p><strong>Technical Approach:</strong> Developed novel software-only defense using 4-state Extended Kalman Filter with funnel monitor and derivative-based velocity checks. Achieved 100% detection rate in Monte Carlo simulations with mean alert times of 0.280 ± 0.57s (Mahalanobis) and 0.00015 ± 0.0014s (velocity).</p>
+                            <p><strong>Role:</strong> Research Assistant – Lead Developer & First Author<br>
+                            <strong>Lab:</strong> Space Robotics and Generative Estimation Lab<br>
+                            <strong>Timeframe:</strong> Feb 2025 – Present</p>
+                            
+                            <p><strong>Objective:</strong> Develop a lightweight state-prediction-based framework to detect sensor spoofing in autonomous systems, tested on GNSS spoofing cases.</p>
+                            
+                            <p><strong>Methodology:</strong></p>
+                            <ul>
+                                <li><strong>Built a 4-state EKF</strong> for trajectory prediction</li>
+                                <li><strong>Implemented funnel-mode Mahalanobis gating</strong> around expected state</li>
+                                <li><strong>Created derivative monitor</strong> for trajectory acceleration anomalies</li>
+                                <li><strong>Simulated GNSS spoofing via in-the-loop simulation</strong> to evaluate efficacy</li>
+                            </ul>
+                            
                             <p><strong>Research Impact:</strong></p>
                             <ul>
-                                <li><strong>First-author paper</strong> submitted to AIAA SciTech 2026</li>
-                                <li><strong>Primary research project</strong> in the Space Robotics and Generative Estimation Lab</li>
-                                <li>Positioned as <strong>foundational architecture</strong> for broader cyber-physical defense systems</li>
-                                <li>Novel approach combining traditional estimation theory with cybersecurity applications</li>
+                                <li><strong>First-author paper submitted to AIAA SciTech 2026</strong></li>
+                                <li><strong>Supports resilient GNC</strong> for autonomous aerospace systems</li>
+                                <li>100% detection rate with sub-second response times in Monte Carlo simulations</li>
                             </ul>
-                            <p><strong>Technologies:</strong> Extended Kalman Filter, GNSS, Monte Carlo Simulation, Cyber-Resilient Autonomy, MATLAB/Simulink</p>
+                            
+                            <p><strong>Technologies:</strong> Python, NumPy, Simulink, EKF, Monte Carlo simulation</p>
+                            
+                            <p><strong>Skills:</strong> State Estimation · Guidance Navigation & Control · Cybersecurity · Sensor Resilience · Autonomous Robotics</p>
                         </div>
                         <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
@@ -763,27 +853,36 @@
 
                 <div class="research-card">
                     <div class="research-card-img">
-                        <img src="./assets/Vulnerability-Scanner-Poster.jpeg" alt="Package Vulnerability Scanner for AISD Systems conference poster presentation" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="background: linear-gradient(135deg, #333333, #666666); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 3rem;">🔐</div>
+                        <img src="./assets/Vulnerability-Scanner-Poster.jpeg" alt="Package Vulnerability Scanner for AISD Systems conference poster presentation" class="clickable-image" style="width: 100%; height: 200px; object-fit: cover;" onclick="openLightbox(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="background: linear-gradient(135deg, #333333, #666666); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">SECURITY</div>
                     </div>
                     <div class="research-card-content">
-                        <h3>Offline Linux Package Vulnerability Scanner</h3>
-                        <p class="project-summary">Full-time software engineering intern developing Python-based vulnerability scanner for government-funded aviation security initiatives. Processed 400+ simulated systems, identifying over 9,000 critical CVEs.</p>
+                        <h3>Offline-Capable Linux Package Vulnerability Scanner</h3>
+                        <p class="project-summary">Full-Time Software Engineering Intern building offline-compatible Linux security scanner to detect vulnerable packages across Debian and Alpine systems used in airgapped aviation environments.</p>
                         <div class="project-details" style="display: none;">
                             <p><strong>Role:</strong> Full-Time Software Engineering Intern<br>
                             <strong>Lab:</strong> Center for Aerospace Resilient Systems (CARS Lab)<br>
-                            <strong>Timeframe:</strong> Jan 2025 – Mar 2025<br>
-                            <strong>Note:</strong> Privileged internship supporting government-funded aviation security initiatives</p>
-                            <p><strong>Project Overview:</strong> Developed Python-based scanner to identify security vulnerabilities in Linux-based aviation systems. This project supported <strong>high-assurance vulnerability detection in embedded aviation systems</strong> where traditional cloud-based tooling is infeasible.</p>
-                            <p><strong>Technical Implementation:</strong></p>
+                            <strong>Timeframe:</strong> Jan 2025 – Mar 2025</p>
+                            
+                            <p><strong>Objective:</strong> Build an offline-compatible Linux security scanner to detect vulnerable packages across Debian and Alpine systems used in airgapped aviation environments.</p>
+                            
+                            <p><strong>Key Contributions:</strong></p>
                             <ul>
-                                <li>Local database with CPE mapping using fuzzy-match logic</li>
-                                <li>CVE correlation using NIST datasets for offline operation</li>
-                                <li>Custom algorithms for embedded system package analysis</li>
-                                <li>Optimized for air-gapped and classified environments</li>
+                                <li><strong>Built tool that successfully mapped 400+ root components</strong> to CVE entries using local CPE correlation</li>
+                                <li><strong>Implemented confidence-based name matching</strong> and metadata scoring</li>
+                                <li><strong>Cross-referenced outputs with NIST/NVD vulnerability feeds</strong></li>
+                                <li><strong>Enabled system-level CVE visualization</strong> for audit-ready reporting</li>
                             </ul>
-                            <p><strong>Results:</strong> Successfully processed 400+ simulated root filesystems, identified 120 vulnerable components and over 9,000 critical CVEs with high accuracy and minimal false positives.</p>
-                            <p><strong>Technologies:</strong> Python, Linux (Debian, Alpine), CPE/OVAL/NVD Standards, Cybersecurity Frameworks</p>
+                            
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li><strong>Identified over 9,000 CVEs</strong> across 120+ vulnerable packages and the Linux Kernel</li>
+                                <li><strong>Demonstrated ~40% auto-matching coverage</strong> in classified environments</li>
+                            </ul>
+                            
+                            <p><strong>Technologies:</strong> Python · Linux (Debian, Alpine) · CPE Matching · CVE Databases · NIST/NVD</p>
+                            
+                            <p><strong>Skills:</strong> Cybersecurity Tools · Vulnerability Analysis · Secure Embedded Systems · Offline Security Scanning</p>
                         </div>
                         <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
@@ -791,24 +890,35 @@
 
                 <div class="research-card">
                     <div class="research-card-img">
-                        <img src="./assets/sliteam.jpg" alt="Sean McConoughey and ResistoJets team at NASA Student Launch competition" style="width: 100%; height: 200px; object-fit: cover; object-position: center;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="background: linear-gradient(135deg, #0099cc, #ff6600); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 2rem;">🚀 NASA</div>
+                        <img src="./assets/sliteam.jpg" alt="Sean McConoughey and ResistoJets team at NASA Student Launch competition" class="clickable-image" style="width: 100%; height: 200px; object-fit: cover; object-position: center;" onclick="openLightbox(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="background: linear-gradient(135deg, #0099cc, #ff6600); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">NASA TEAM</div>
                     </div>
                     <div class="research-card-content">
-                        <h3>NASA Student Launch Initiative – Team Leadership</h3>
-                        <p class="project-summary">Founded and led ResistoJets Rocketry team to 1st Place NASA Student Launch "Altitude Award" (2024). Only New Jersey team in competition, landing within 43 feet of target altitude with comprehensive project management.</p>
+                        <h3>NASA Student Launch & TARC – Team Leadership</h3>
+                        <p class="project-summary">Founded ResistoJets Rocketry and led through NASA Student Launch Initiative. Placed 1st in Altitude Award (2024) and achieved Top 25/800+ teams nationally in American Rocketry Challenge.</p>
                         <div class="project-details" style="display: none;">
                             <p><strong>Organization:</strong> Morris County 4-H / ResistoJets Rocketry<br>
-                            <strong>Timeframe:</strong> Oct 2021 – May 2024</p>
-                            <p><strong>Major Achievement:</strong></p>
+                            <strong>NASA SLI Timeframe:</strong> Aug 2022 – May 2024<br>
+                            <strong>TARC Timeframe:</strong> Oct 2021 – Apr 2023</p>
+                            
+                            <p><strong>NASA Student Launch Achievements:</strong></p>
                             <ul>
-                                <li><strong>1st Place NASA Student Launch "Altitude Award" Winner (2024)</strong></li>
-                                <li><strong>Only New Jersey team</strong> in the competition, placing within 43 feet of target altitude</li>
-                                <li><strong>Managed technical operations, outreach, and review board presentations</strong> for Project Hermes and Stardust</li>
+                                <li><strong>Founded and led ResistoJets Rocketry</strong> through NASA's Student Launch Initiative</li>
+                                <li><strong>Placed 1st in Altitude Award</strong> out of 60+ teams nationwide in 2024</li>
+                                <li><strong>Managed $40,000+ in fundraising and logistics</strong> while mentoring a diverse team</li>
+                                <li><strong>Oversaw payload integration, propulsion, avionics, and outreach</strong></li>
                             </ul>
-                            <p><strong>Leadership Journey:</strong> Founded ResistoJets from scratch, progressing from American Rocketry Challenge (top 25/800+ teams nationally) to NASA SLI success. Managed multi-year program growth, team development, and $40,000+ in fundraising and sponsorships.</p>
+                            
+                            <p><strong>American Rocketry Challenge Foundation:</strong></p>
+                            <ul>
+                                <li><strong>Founded competition team</strong> with mission to qualify for NASA SLI</li>
+                                <li><strong>Achieved Top 25 placement</strong> out of 800+ teams nationally</li>
+                                <li><strong>Led design, simulation, launch, and evaluation</strong> for TARC vehicles</li>
+                            </ul>
+                            
                             <p><strong>Media Recognition:</strong> Featured in <a href="https://newjersey.news12.com/jersey-proud-teen-rocket-engineers-hope-to-be-part-of-nasa-one-day" target="_blank" style="color: #0099cc;">News 12 New Jersey</a>, <a href="https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/" target="_blank" style="color: #0099cc;">Rutgers NJAES News</a>, and <a href="https://www.nasa.gov/centers-and-facilities/marshall/rockets-soar-during-nasa-student-launch-competition/" target="_blank" style="color: #0099cc;">NASA official coverage</a>.</p>
-                            <p><strong>Core Skills:</strong> Team Leadership, Program Management, Systems Engineering, High-Powered Rocketry, Media Relations, Grant Writing</p>
+                            
+                            <p><strong>Skills:</strong> Team Leadership · Program Management · Systems Engineering · High-Powered Rocketry · Media Relations</p>
                         </div>
                         <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
@@ -816,8 +926,8 @@
 
                 <div class="research-card">
                     <div class="research-card-img">
-                        <img src="./assets/PandaPoster.png" alt="PANDA next-generation liquid rocket avionics system poster presentation" style="width: 100%; height: 200px; object-fit: cover; object-position: center;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="background: linear-gradient(135deg, #003366, #ff6600); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 2rem;">⚡</div>
+                        <img src="./assets/PandaPoster.png" alt="PANDA next-generation liquid rocket avionics system poster presentation" class="clickable-image" style="width: 100%; height: 200px; object-fit: cover; object-position: center;" onclick="openLightbox(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="background: linear-gradient(135deg, #003366, #ff6600); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">AVIONICS</div>
                     </div>
                     <div class="research-card-content">
                         <h3>PANDA Avionics System Development</h3>
@@ -844,26 +954,29 @@
 
                 <div class="research-card">
                     <div class="research-card-img">
-                        <img src="./assets/Ground-Controller.jpeg" alt="Ground controller setup for liquid rocket engine test operations" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="background: linear-gradient(135deg, #ff6600, #003366); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 3rem;">🔧</div>
+                        <img src="./assets/Ground-Controller.jpeg" alt="Ground controller setup for liquid rocket engine test operations" class="clickable-image" style="width: 100%; height: 200px; object-fit: cover;" onclick="openLightbox(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="background: linear-gradient(135deg, #ff6600, #003366); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">DESIGN</div>
                     </div>
                     <div class="research-card-content">
                         <h3>Project Saguaro: LOX-Kerosene Engine Proposal</h3>
-                        <p class="project-summary">Project lead for ERPL's composite overwrapped kerosene-LOX engine proposal with regenerative cooling and catalyst-based ignition. Authored preliminary design specifications and thermal modeling.</p>
+                        <p class="project-summary">Chamber Lead for initial proposal team that merged to form Project Saguaro - LOX/kerosene engine with composite overwrapped pressure vessels and catalyst-based ignition. Chamber lead through preliminary design review.</p>
                         <div class="project-details" style="display: none;">
-                            <p><strong>Role:</strong> Project Lead (Proposal Phase)<br>
-                            <strong>Lab:</strong> ERPL — Propulsion Design Teams<br>
+                            <p><strong>Role:</strong> Chamber Lead<br>
+                            <strong>Lab:</strong> ERPL – Propulsion Design Team<br>
                             <strong>Timeframe:</strong> Aug 2024 – Dec 2024</p>
-                            <p><strong>Project Scope:</strong> Led design proposal team for composite overwrapped kerosene-liquid oxygen engine featuring regenerative cooling and catalyst-based ignition systems.</p>
-                            <p><strong>Technical Contributions:</strong></p>
+                            
+                            <p><strong>Overview:</strong> Led initial proposal team that merged to form project Saguaro - a LOX/kerosene engine with composite overwrapped pressure vessels and catalyst-based ignition. Chamber lead through preliminary design review.</p>
+                            
+                            <p><strong>Key Contributions:</strong></p>
                             <ul>
-                                <li><strong>Authored preliminary design specification</strong> including performance requirements and safety margins</li>
-                                <li><strong>Developed propellant delivery system models</strong> with pressure drop and flow rate analysis</li>
-                                <li><strong>Performed thermal cycling analysis</strong> for regenerative cooling jacket design</li>
-                                <li><strong>Created 3D models and assembly drawings</strong> for manufacturing feasibility assessment</li>
+                                <li><strong>Authored system specs</strong> and integrated design strategy</li>
+                                <li><strong>Developed thermal and flow models</strong> for combustion and feed system</li>
+                                <li><strong>Conducted manufacturability assessment</strong> and merged team proposals into unified concept</li>
                             </ul>
-                            <p><strong>Innovation Focus:</strong> Composite overwrapped pressure vessel integration with liquid rocket engine technology, targeting improved thrust-to-weight ratios and manufacturing scalability.</p>
-                            <p><strong>Technologies:</strong> CATIA, Fusion 360, MATLAB, Finite Element Analysis, Propulsion System Design, Thermal Management</p>
+                            
+                            <p><strong>Tools:</strong> CATIA · Fusion 360 · MATLAB · FEA (Autodesk) · Cycle Analysis</p>
+                            
+                            <p><strong>Skills:</strong> Rocket Engine Design · Thermal Modeling · Systems Integration · Pressure Vessel Design</p>
                         </div>
                         <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
@@ -884,28 +997,28 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1rem;">🎓 Embry-Riddle Official News</h3>
+                    <h3 style="color: #003366; margin-bottom: 1rem;">Embry-Riddle Official News</h3>
                     <p style="color: #ff6600; font-weight: 600; margin-bottom: 1rem;">"Hot Fire Test: Embry-Riddle Club Launches Students' Rocket Ambitions"</p>
                     <p>Featured in official university coverage of ERPL's Project Triton — the most powerful rocket engine in the club's history. Sean McConoughey is specifically named as one of the team members monitoring system status during the historic hot fire test at Cecil Spaceport.</p>
                     <a href="https://news.erau.edu/headlines/hot-fire-test" target="_blank" style="color: #0099cc; text-decoration: none; font-weight: 600;">View Coverage →</a>
                 </div>
 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1rem;">📺 News 12 New Jersey Feature</h3>
+                    <h3 style="color: #003366; margin-bottom: 1rem;">News 12 New Jersey Feature</h3>
                     <p style="color: #ff6600; font-weight: 600; margin-bottom: 1rem;">"Jersey Proud: Teen rocket engineers hope to be part of NASA one day"</p>
                     <p>Featured as part of the "Jersey Proud" series highlighting exceptional New Jersey students. Coverage focused on the ResistoJets team's unique position as the only team like it in New Jersey preparing for NASA's Student Launch Initiative.</p>
                     <a href="https://newjersey.news12.com/jersey-proud-teen-rocket-engineers-hope-to-be-part-of-nasa-one-day" target="_blank" style="color: #0099cc; text-decoration: none; font-weight: 600;">View Coverage →</a>
                 </div>
 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1rem;">🏆 Rutgers NJAES News</h3>
+                    <h3 style="color: #003366; margin-bottom: 1rem;">Rutgers NJAES News</h3>
                     <p style="color: #ff6600; font-weight: 600; margin-bottom: 1rem;">"4-H ResistoJets Rocketry Club Wins 'Altitude Award'"</p>
                     <p>Official university coverage of the team's first place "Altitude Award" achievement in the 2024 NASA Student Launch Competition, highlighting the precision landing just 43 feet from target altitude.</p>
                     <a href="https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/" target="_blank" style="color: #0099cc; text-decoration: none; font-weight: 600;">View Coverage →</a>
                 </div>
 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1rem;">🚀 NASA Official Coverage</h3>
+                    <h3 style="color: #003366; margin-bottom: 1rem;">NASA Official Coverage</h3>
                     <p style="color: #ff6600; font-weight: 600; margin-bottom: 1rem;">"Rockets Soar During NASA Student Launch Competition"</p>
                     <p>Featured in official NASA coverage of the Student Launch competition at Marshall Space Flight Center, highlighting the achievements of over 1,000 students from across the U.S. and Puerto Rico.</p>
                     <a href="https://www.nasa.gov/centers-and-facilities/marshall/rockets-soar-during-nasa-student-launch-competition/" target="_blank" style="color: #0099cc; text-decoration: none; font-weight: 600;">View Coverage →</a>
@@ -923,50 +1036,30 @@
                 <p>Latest accomplishments and milestones in aerospace engineering research and development</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <div class="achievements-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
                 
-                <div style="background: linear-gradient(135deg, #ff6600, #ff9933); color: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 16px rgba(255, 102, 0, 0.3);">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 2.5rem; margin-right: 1rem;">🚀</span>
-                        <div>
-                            <h3 style="margin: 0; font-size: 1.3rem;">Project Triton Success</h3>
-                            <p style="margin: 0.25rem 0 0 0; opacity: 0.9; font-size: 0.9rem;">May 2025</p>
-                        </div>
-                    </div>
-                    <p style="margin: 0; line-height: 1.6;">Contributed to ERPL's most powerful rocket engine test to date. Project Triton achieved 1,000 pounds of thrust using ethanol/LOX propellants — a three-fold increase over previous engines.</p>
+                <div style="background: linear-gradient(135deg, #ff6600, #ff9933); color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);">
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">Project Triton Success</h3>
+                    <p style="margin: 0 0 0.75rem 0; opacity: 0.9; font-size: 0.85rem;">May 2025</p>
+                    <p style="margin: 0; line-height: 1.4; font-size: 0.9rem;">ERPL's most powerful rocket engine test. 1,000 pounds thrust using ethanol/LOX — three-fold increase over previous engines.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #003366, #0066cc); color: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 16px rgba(0, 51, 102, 0.3);">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 2.5rem; margin-right: 1rem;">📝</span>
-                        <div>
-                            <h3 style="margin: 0; font-size: 1.3rem;">First-Author Research</h3>
-                            <p style="margin: 0.25rem 0 0 0; opacity: 0.9; font-size: 0.9rem;">Submitted to AIAA SciTech 2026</p>
-                        </div>
-                    </div>
-                    <p style="margin: 0; line-height: 1.6;">Lead researcher on GNSS spoofing detection paper using Extended Kalman Filter. Achieved 100% detection rate with sub-second response times in Monte Carlo simulations.</p>
+                <div style="background: linear-gradient(135deg, #003366, #0066cc); color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 51, 102, 0.3);">
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">First-Author Research</h3>
+                    <p style="margin: 0 0 0.75rem 0; opacity: 0.9; font-size: 0.85rem;">Submitted to AIAA SciTech 2026</p>
+                    <p style="margin: 0; line-height: 1.4; font-size: 0.9rem;">Lead researcher on GNSS spoofing detection using Extended Kalman Filter. 100% detection rate with sub-second response times.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #0099cc, #00ccff); color: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 16px rgba(0, 153, 204, 0.3);">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 2.5rem; margin-right: 1rem;">💼</span>
-                        <div>
-                            <h3 style="margin: 0; font-size: 1.3rem;">Government Security Intern</h3>
-                            <p style="margin: 0.25rem 0 0 0; opacity: 0.9; font-size: 0.9rem;">Jan 2025 - Mar 2025</p>
-                        </div>
-                    </div>
-                    <p style="margin: 0; line-height: 1.6;">Full-time software engineering intern at CARS Lab supporting government-funded aviation security initiatives. Developed vulnerability scanner processing 400+ systems.</p>
+                <div style="background: linear-gradient(135deg, #0099cc, #00ccff); color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 153, 204, 0.3);">
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">Government Security Intern</h3>
+                    <p style="margin: 0 0 0.75rem 0; opacity: 0.9; font-size: 0.85rem;">Jan 2025 - Mar 2025</p>
+                    <p style="margin: 0; line-height: 1.4; font-size: 0.9rem;">Full-time software engineering intern at CARS Lab supporting government-funded aviation security. Developed vulnerability scanner for 400+ systems.</p>
                 </div>
 
-                <div style="background: linear-gradient(135deg, #333333, #666666); color: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 16px rgba(51, 51, 51, 0.3);">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 2.5rem; margin-right: 1rem;">🎯</span>
-                        <div>
-                            <h3 style="margin: 0; font-size: 1.3rem;">PANDA System Development</h3>
-                            <p style="margin: 0.25rem 0 0 0; opacity: 0.9; font-size: 0.9rem;">Ongoing - 2025</p>
-                        </div>
-                    </div>
-                    <p style="margin: 0; line-height: 1.6;">Designing next-generation liquid rocket avionics with 12 buses, 16 pressure channels, and 12 solenoid channels. Custom PCB optimized for high-altitude launch vehicles.</p>
+                <div style="background: linear-gradient(135deg, #333333, #666666); color: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(51, 51, 51, 0.3);">
+                    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">PANDA System Development</h3>
+                    <p style="margin: 0 0 0.75rem 0; opacity: 0.9; font-size: 0.85rem;">Ongoing - 2025</p>
+                    <p style="margin: 0; line-height: 1.4; font-size: 0.9rem;">Next-generation liquid rocket avionics with 12 buses, 16 pressure channels, and 12 solenoid channels for high-altitude launch vehicles.</p>
                 </div>
             </div>
 
@@ -1020,7 +1113,8 @@
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                     <h3 style="color: #003366; margin-bottom: 0.5rem;">NASA L'SPACE NPWEE Program</h3>
                     <p style="color: #ff6600; font-weight: 600; margin-bottom: 1rem;">Participant, Proposal Writer | Fall 2024</p>
-                    <p>Conducted structured proposal writing and critique on lunar surface spacecraft safety systems. Participated in peer review and rubric-based NASA evaluation simulation.</p>
+                    <p><strong>Program:</strong> NASA Proposal Writing and Evaluation Experience Academy</p>
+                    <p>Evaluated spacecraft risks and developed mitigation strategies for lunar operations. Participated in competitive peer-reviewed proposal simulation using NASA evaluation frameworks.</p>
                 </div>
 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -1044,7 +1138,7 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1rem;">🖥️ Programming Languages</h3>
+                    <h3 style="color: #003366; margin-bottom: 1rem;">Programming Languages</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Python</span>
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">C++</span>
@@ -1057,7 +1151,7 @@
                 </div>
 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1rem;">🛠️ Tools & Software</h3>
+                    <h3 style="color: #003366; margin-bottom: 1rem;">Tools & Software</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Simulink</span>
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Fusion 360</span>
@@ -1070,7 +1164,7 @@
                 </div>
 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1rem;">🖥️ Environments</h3>
+                    <h3 style="color: #003366; margin-bottom: 1rem;">Environments</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Linux (Debian, Alpine)</span>
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Windows</span>
@@ -1079,14 +1173,14 @@
                 </div>
 
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1rem;">🚀 Domain Expertise</h3>
+                    <h3 style="color: #003366; margin-bottom: 1rem;">Domain Expertise</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Propulsion</span>
-                        <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Embedded Systems</span>
+                        <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Avionics</span>
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">GN&C</span>
                         <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Cybersecurity</span>
-                        <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Vulnerability Detection</span>
-                        <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">ML-in-the-loop Simulation</span>
+                        <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Autonomous Systems</span>
+                        <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Embedded Tooling</span>
                     </div>
                 </div>
             </div>
@@ -1106,7 +1200,7 @@
                 
                 <!-- Primary Contact Methods -->
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1.5rem;">📧 Email Communication</h3>
+                    <h3 style="color: #003366; margin-bottom: 1.5rem;">Email Communication</h3>
                     <div style="margin-bottom: 1rem;">
                         <a href="mailto:seanmcconoughey@gmail.com" style="display: inline-block; background: #ff6600; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">
                             Send Email Directly
@@ -1120,7 +1214,7 @@
 
                 <!-- Professional Network -->
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1.5rem;">💼 Professional Network</h3>
+                    <h3 style="color: #003366; margin-bottom: 1.5rem;">Professional Network</h3>
                     <div style="margin-bottom: 1rem;">
                         <a href="https://linkedin.com/in/sean-mcconoughey" target="_blank" style="display: inline-block; background: #0077b5; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">
                             Connect on LinkedIn
@@ -1134,15 +1228,15 @@
 
                 <!-- Academic & Research -->
                 <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #003366; margin-bottom: 1.5rem;">🎓 Academic Resources</h3>
+                    <h3 style="color: #003366; margin-bottom: 1.5rem;">Academic Resources</h3>
                     <div style="margin-bottom: 1rem;">
                         <button onclick="alert('Resume available upon request via email')" style="display: inline-block; background: #003366; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
                             Request Resume
                         </button>
                     </div>
-                    <p style="margin: 0; color: #666; font-size: 0.9rem;">
-                        <strong>Research Paper:</strong> AIAA SciTech 2026 submission under review<br>
-                        <strong>Resume:</strong> Available upon request for relevant opportunities
+                                         <p style="margin: 0; color: #666; font-size: 0.9rem;">
+                        <strong>Resume:</strong> Available upon request or downloadable PDF<br>
+                        <strong>SciTech Paper:</strong> Under review – available post-publication
                     </p>
                 </div>
 
@@ -1175,6 +1269,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightboxImage" class="lightbox-image" src="" alt="">
+        </div>
+    </div>
 
     <script type="module" src="./main.js"></script>
 </body>
