@@ -558,6 +558,41 @@
             object-fit: cover;
         }
 
+        /* Project card expand/collapse styles */
+        .project-summary {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .expand-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .expand-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-1px);
+        }
+
+        .expand-btn.expanded {
+            background: var(--accent-color);
+        }
+
         /* Responsive */
         @media screen and (max-width: 768px) {
             .menu-toggle {
@@ -677,17 +712,20 @@
                     </div>
                     <div class="research-card-content">
                         <h3>Liquid Rocket Engine Development & Hotfire Testing</h3>
-                        <p><strong>Role:</strong> Electronics Lead (ERPL), Embry-Riddle Aeronautical University<br>
-                        <strong>Timeframe:</strong> Sept 2024 – Present</p>
-                        <p><strong>Achievements:</strong></p>
-                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                            <li><strong>Built full avionics suite and DAQ</strong> for a regeneratively cooled bipropellant engine</li>
-                            <li><strong>Led successful hotfire test campaign</strong> with live telemetry and safety controls</li>
-                            <li><strong>Managed ground controller operations</strong> and supported systems integration</li>
-                        </ul>
-                        <div style="margin-top: 1rem;">
-                            <strong>Technologies:</strong> C++, Python, CAN bus, Teensy 4.1, Fusion 360
+                        <p class="project-summary">Electronics Lead for ERPL's regeneratively cooled bipropellant engine project. Built full avionics suite and led successful hotfire test campaigns with live telemetry and safety controls.</p>
+                        <div class="project-details" style="display: none;">
+                            <p><strong>Role:</strong> Electronics Lead (ERPL), Embry-Riddle Aeronautical University<br>
+                            <strong>Timeframe:</strong> Sept 2024 – Present</p>
+                            <p><strong>Key Achievements:</strong></p>
+                            <ul>
+                                <li><strong>Built full avionics suite and DAQ</strong> for a regeneratively cooled bipropellant engine</li>
+                                <li><strong>Led successful hotfire test campaign</strong> with live telemetry and data acquisition</li>
+                                <li><strong>Managed ground controller operations</strong> and supported systems integration</li>
+                                <li>Developed real-time monitoring systems for engine performance metrics</li>
+                            </ul>
+                            <p><strong>Technologies:</strong> C++, Python, CAN bus, Teensy 4.1, Fusion 360, Data Acquisition Systems</p>
                         </div>
+                        <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
                 </div>
 
@@ -698,20 +736,23 @@
                     </div>
                     <div class="research-card-content">
                         <h3>GNSS Spoofing Detection via EKF-Based State Prediction</h3>
-                        <p><strong>Role:</strong> Lead Researcher (First Author)<br>
-                        <strong>Co-Author:</strong> Dr. Cagri Kilic<br>
-                        <strong>Timeframe:</strong> Feb 2024 – Present</p>
-                        <p><strong>Paper Title:</strong> "Detecting GNSS Spoofing in Robotic Systems via EKF-Based State Prediction and Derivative Analysis"</p>
-                        <p>Developed novel software-only defense using 4-state Extended Kalman Filter with funnel monitor and derivative-based velocity checks. Achieved 100% detection rate in Monte Carlo simulations with mean alert times of 0.280 ± 0.57s (Mahalanobis) and 0.00015 ± 0.0014s (velocity).</p>
-                        <p><strong>Impact:</strong></p>
-                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                            <li><strong>First-author paper</strong> submitted to AIAA SciTech 2026</li>
-                            <li><strong>Primary research project</strong> in the Space Robotics and Generative Estimation Lab</li>
-                            <li>Positioned as <strong>foundational architecture</strong> for broader cyber-physical defense work</li>
-                        </ul>
-                        <div style="margin-top: 1rem;">
-                            <strong>Technologies:</strong> Extended Kalman Filter, GNSS, Monte Carlo Simulation, Cyber-Resilient Autonomy
+                        <p class="project-summary">First-author research developing novel software-only GNSS spoofing defense using Extended Kalman Filter. Achieved 100% detection rate in Monte Carlo simulations with sub-second response times.</p>
+                        <div class="project-details" style="display: none;">
+                            <p><strong>Role:</strong> Lead Researcher (First Author)<br>
+                            <strong>Co-Author:</strong> Dr. Cagri Kilic<br>
+                            <strong>Timeframe:</strong> Feb 2024 – Present</p>
+                            <p><strong>Paper Title:</strong> "Detecting GNSS Spoofing in Robotic Systems via EKF-Based State Prediction and Derivative Analysis"</p>
+                            <p><strong>Technical Approach:</strong> Developed novel software-only defense using 4-state Extended Kalman Filter with funnel monitor and derivative-based velocity checks. Achieved 100% detection rate in Monte Carlo simulations with mean alert times of 0.280 ± 0.57s (Mahalanobis) and 0.00015 ± 0.0014s (velocity).</p>
+                            <p><strong>Research Impact:</strong></p>
+                            <ul>
+                                <li><strong>First-author paper</strong> submitted to AIAA SciTech 2026</li>
+                                <li><strong>Primary research project</strong> in the Space Robotics and Generative Estimation Lab</li>
+                                <li>Positioned as <strong>foundational architecture</strong> for broader cyber-physical defense systems</li>
+                                <li>Novel approach combining traditional estimation theory with cybersecurity applications</li>
+                            </ul>
+                            <p><strong>Technologies:</strong> Extended Kalman Filter, GNSS, Monte Carlo Simulation, Cyber-Resilient Autonomy, MATLAB/Simulink</p>
                         </div>
+                        <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
                 </div>
 
@@ -722,32 +763,24 @@
                     </div>
                     <div class="research-card-content">
                         <h3>Offline Linux Package Vulnerability Scanner</h3>
-                        <p><strong>Role:</strong> Full-Time Software Engineering Intern<br>
-                        <strong>Lab:</strong> Center for Aerospace Resilient Systems (CARS Lab)<br>
-                        <strong>Timeframe:</strong> Jan 2025 – Mar 2025<br>
-                        <strong>Note:</strong> Privileged internship supporting government-funded aviation security initiatives</p>
-                        <p>Developed Python-based scanner to identify security vulnerabilities in Linux-based aviation systems. This project supported <strong>high-assurance vulnerability detection in embedded aviation systems</strong> where traditional cloud-based tooling is infeasible. Local database with CPE mapping using fuzzy-match logic and CVE correlation using NIST datasets.</p>
-                        <p><strong>Results:</strong> Processed 400+ simulated root filesystems, identified 120 vulnerable components and over 9,000 critical CVEs</p>
-                        <div style="margin-top: 1rem;">
-                            <strong>Technologies:</strong> Python, Linux (Debian, Alpine), CPE/OVAL/NVD
+                        <p class="project-summary">Full-time software engineering intern developing Python-based vulnerability scanner for government-funded aviation security initiatives. Processed 400+ simulated systems, identifying over 9,000 critical CVEs.</p>
+                        <div class="project-details" style="display: none;">
+                            <p><strong>Role:</strong> Full-Time Software Engineering Intern<br>
+                            <strong>Lab:</strong> Center for Aerospace Resilient Systems (CARS Lab)<br>
+                            <strong>Timeframe:</strong> Jan 2025 – Mar 2025<br>
+                            <strong>Note:</strong> Privileged internship supporting government-funded aviation security initiatives</p>
+                            <p><strong>Project Overview:</strong> Developed Python-based scanner to identify security vulnerabilities in Linux-based aviation systems. This project supported <strong>high-assurance vulnerability detection in embedded aviation systems</strong> where traditional cloud-based tooling is infeasible.</p>
+                            <p><strong>Technical Implementation:</strong></p>
+                            <ul>
+                                <li>Local database with CPE mapping using fuzzy-match logic</li>
+                                <li>CVE correlation using NIST datasets for offline operation</li>
+                                <li>Custom algorithms for embedded system package analysis</li>
+                                <li>Optimized for air-gapped and classified environments</li>
+                            </ul>
+                            <p><strong>Results:</strong> Successfully processed 400+ simulated root filesystems, identified 120 vulnerable components and over 9,000 critical CVEs with high accuracy and minimal false positives.</p>
+                            <p><strong>Technologies:</strong> Python, Linux (Debian, Alpine), CPE/OVAL/NVD Standards, Cybersecurity Frameworks</p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="research-card">
-                    <div class="research-card-img">
-                        <img src="./assets/Ground-Controller.jpeg" alt="Ground controller setup for liquid rocket engine test operations" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div style="background: linear-gradient(135deg, #ff6600, #003366); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 3rem;">🔧</div>
-                    </div>
-                    <div class="research-card-content">
-                        <h3>Project Saguaro: LOX-Kerosene Engine Proposal</h3>
-                        <p><strong>Role:</strong> Project Lead (Proposal Phase)<br>
-                        <strong>Lab:</strong> ERPL — Propulsion Design Teams<br>
-                        <strong>Timeframe:</strong> Aug 2024 – Dec 2024</p>
-                        <p>Led design proposal team for composite overwrapped kerosene-liquid oxygen engine with regenerative cooling and catalyst-based ignition. Authored preliminary design spec and modeled propellant delivery and thermal cycling.</p>
-                        <div style="margin-top: 1rem;">
-                            <strong>Technologies:</strong> CATIA, Fusion 360, MATLAB, FEA analysis
-                        </div>
+                        <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
                 </div>
 
@@ -758,19 +791,21 @@
                     </div>
                     <div class="research-card-content">
                         <h3>NASA Student Launch Initiative – Team Leadership</h3>
-                        <p><strong>Organization:</strong> Morris County 4-H / ResistoJets Rocketry<br>
-                        <strong>Timeframe:</strong> Oct 2021 – May 2024</p>
-                        <p><strong>Achievement:</strong></p>
-                        <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                            <li><strong>1st Place NASA Student Launch "Altitude Award" Winner (2024)</strong></li>
-                            <li><strong>Only New Jersey team</strong> in the competition, placing within 43 feet of target altitude</li>
-                            <li><strong>Managed technical operations, outreach, and review board presentations</strong> for Project Hermes and Stardust</li>
-                        </ul>
-                        <p><strong>Leadership Journey:</strong> Founded ResistoJets from scratch, progressing from American Rocketry Challenge (top 25/800+ teams) to NASA SLI success. Managed multi-year program growth, team development, and $40,000+ in fundraising.</p>
-                        <p>Featured in <a href="https://newjersey.news12.com/jersey-proud-teen-rocket-engineers-hope-to-be-part-of-nasa-one-day" target="_blank" style="color: #0099cc;">News 12 New Jersey</a> and <a href="https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/" target="_blank" style="color: #0099cc;">Rutgers NJAES News</a>.</p>
-                        <div style="margin-top: 1rem;">
-                            <strong>Skills:</strong> Team Leadership, Program Management, Systems Engineering, High-Powered Rocketry, Media Relations
+                        <p class="project-summary">Founded and led ResistoJets Rocketry team to 1st Place NASA Student Launch "Altitude Award" (2024). Only New Jersey team in competition, landing within 43 feet of target altitude with comprehensive project management.</p>
+                        <div class="project-details" style="display: none;">
+                            <p><strong>Organization:</strong> Morris County 4-H / ResistoJets Rocketry<br>
+                            <strong>Timeframe:</strong> Oct 2021 – May 2024</p>
+                            <p><strong>Major Achievement:</strong></p>
+                            <ul>
+                                <li><strong>1st Place NASA Student Launch "Altitude Award" Winner (2024)</strong></li>
+                                <li><strong>Only New Jersey team</strong> in the competition, placing within 43 feet of target altitude</li>
+                                <li><strong>Managed technical operations, outreach, and review board presentations</strong> for Project Hermes and Stardust</li>
+                            </ul>
+                            <p><strong>Leadership Journey:</strong> Founded ResistoJets from scratch, progressing from American Rocketry Challenge (top 25/800+ teams nationally) to NASA SLI success. Managed multi-year program growth, team development, and $40,000+ in fundraising and sponsorships.</p>
+                            <p><strong>Media Recognition:</strong> Featured in <a href="https://newjersey.news12.com/jersey-proud-teen-rocket-engineers-hope-to-be-part-of-nasa-one-day" target="_blank" style="color: #0099cc;">News 12 New Jersey</a>, <a href="https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/" target="_blank" style="color: #0099cc;">Rutgers NJAES News</a>, and <a href="https://www.nasa.gov/centers-and-facilities/marshall/rockets-soar-during-nasa-student-launch-competition/" target="_blank" style="color: #0099cc;">NASA official coverage</a>.</p>
+                            <p><strong>Core Skills:</strong> Team Leadership, Program Management, Systems Engineering, High-Powered Rocketry, Media Relations, Grant Writing</p>
                         </div>
+                        <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
                 </div>
 
@@ -781,13 +816,51 @@
                     </div>
                     <div class="research-card-content">
                         <h3>PANDA Avionics System Development</h3>
-                        <p><strong>Role:</strong> Electronics Design Engineer<br>
-                        <strong>Lab:</strong> Experimental Rocket Propulsion Lab (ERPL)<br>
-                        <strong>Timeframe:</strong> Sept 2024 – Present</p>
-                        <p>Designing next-generation liquid rocket avionics system for high-altitude launch vehicles. PANDA features 12 total buses, 16 pressure transducer channels, 12 solenoid channels, 6 load cells, and 6 thermal couples. Custom PCB design optimized for harsh launch environments and real-time telemetry.</p>
-                        <div style="margin-top: 1rem;">
-                            <strong>Technologies:</strong> PCB Design, Embedded Systems, CAN Bus, High-Power Electronics, Aerospace Standards
+                        <p class="project-summary">Electronics design engineer developing next-generation liquid rocket avionics system. Custom PCB features 12 buses, 16 pressure channels, and 12 solenoid channels optimized for high-altitude launch vehicles.</p>
+                        <div class="project-details" style="display: none;">
+                            <p><strong>Role:</strong> Electronics Design Engineer<br>
+                            <strong>Lab:</strong> Experimental Rocket Propulsion Lab (ERPL)<br>
+                            <strong>Timeframe:</strong> Sept 2024 – Present</p>
+                            <p><strong>System Specifications:</strong></p>
+                            <ul>
+                                <li><strong>12 total communication buses</strong> for distributed system architecture</li>
+                                <li><strong>16 pressure transducer channels</strong> for comprehensive fluid system monitoring</li>
+                                <li><strong>12 solenoid control channels</strong> for valve actuation and flow control</li>
+                                <li><strong>6 load cell inputs</strong> for thrust and structural load measurement</li>
+                                <li><strong>6 thermocouple channels</strong> for thermal management and safety</li>
+                            </ul>
+                            <p><strong>Design Approach:</strong> Custom PCB design optimized for harsh launch environments and real-time telemetry. Emphasis on redundancy, electromagnetic compatibility, and aerospace-grade component selection.</p>
+                            <p><strong>Applications:</strong> High-altitude launch vehicles requiring sophisticated control and monitoring systems with real-time data acquisition capabilities.</p>
+                            <p><strong>Technologies:</strong> PCB Design, Embedded Systems, CAN Bus, High-Power Electronics, Aerospace Standards, Signal Conditioning</p>
                         </div>
+                        <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <div class="research-card-img">
+                        <img src="./assets/Ground-Controller.jpeg" alt="Ground controller setup for liquid rocket engine test operations" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div style="background: linear-gradient(135deg, #ff6600, #003366); height: 200px; display: none; align-items: center; justify-content: center; color: white; font-size: 3rem;">🔧</div>
+                    </div>
+                    <div class="research-card-content">
+                        <h3>Project Saguaro: LOX-Kerosene Engine Proposal</h3>
+                        <p class="project-summary">Project lead for ERPL's composite overwrapped kerosene-LOX engine proposal with regenerative cooling and catalyst-based ignition. Authored preliminary design specifications and thermal modeling.</p>
+                        <div class="project-details" style="display: none;">
+                            <p><strong>Role:</strong> Project Lead (Proposal Phase)<br>
+                            <strong>Lab:</strong> ERPL — Propulsion Design Teams<br>
+                            <strong>Timeframe:</strong> Aug 2024 – Dec 2024</p>
+                            <p><strong>Project Scope:</strong> Led design proposal team for composite overwrapped kerosene-liquid oxygen engine featuring regenerative cooling and catalyst-based ignition systems.</p>
+                            <p><strong>Technical Contributions:</strong></p>
+                            <ul>
+                                <li><strong>Authored preliminary design specification</strong> including performance requirements and safety margins</li>
+                                <li><strong>Developed propellant delivery system models</strong> with pressure drop and flow rate analysis</li>
+                                <li><strong>Performed thermal cycling analysis</strong> for regenerative cooling jacket design</li>
+                                <li><strong>Created 3D models and assembly drawings</strong> for manufacturing feasibility assessment</li>
+                            </ul>
+                            <p><strong>Innovation Focus:</strong> Composite overwrapped pressure vessel integration with liquid rocket engine technology, targeting improved thrust-to-weight ratios and manufacturing scalability.</p>
+                            <p><strong>Technologies:</strong> CATIA, Fusion 360, MATLAB, Finite Element Analysis, Propulsion System Design, Thermal Management</p>
+                        </div>
+                        <button class="expand-btn" onclick="toggleDetails(this)">Read More</button>
                     </div>
                 </div>
             </div>
@@ -928,58 +1001,67 @@
                 <p>I'm always interested in discussing aerospace engineering projects, research opportunities, or potential collaborations.</p>
             </div>
             
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-text">
-                                <a href="mailto:seanmcconoughey@gmail.com">seanmcconoughey@gmail.com</a>
-                            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                
+                <!-- Primary Contact Methods -->
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #003366; margin-bottom: 1.5rem;">📧 Email Communication</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <a href="mailto:seanmcconoughey@gmail.com" style="display: inline-block; background: #ff6600; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">
+                            Send Email Directly
+                        </a>
+                    </div>
+                    <p style="margin: 0; color: #666; font-size: 0.9rem;">
+                        <strong>seanmcconoughey@gmail.com</strong><br>
+                        Best for: Research collaboration, internship opportunities, project discussions
+                    </p>
+                </div>
+
+                <!-- Professional Network -->
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #003366; margin-bottom: 1.5rem;">💼 Professional Network</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <a href="https://linkedin.com/in/sean-mcconoughey" target="_blank" style="display: inline-block; background: #0077b5; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                    <p style="margin: 0; color: #666; font-size: 0.9rem;">
+                        <strong>linkedin.com/in/sean-mcconoughey</strong><br>
+                        Best for: Professional networking, career opportunities, industry connections
+                    </p>
+                </div>
+
+                <!-- Academic & Research -->
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h3 style="color: #003366; margin-bottom: 1.5rem;">🎓 Academic Resources</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <button onclick="alert('Resume available upon request via email')" style="display: inline-block; background: #003366; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                            Request Resume
+                        </button>
+                    </div>
+                    <p style="margin: 0; color: #666; font-size: 0.9rem;">
+                        <strong>Research Paper:</strong> AIAA SciTech 2026 submission under review<br>
+                        <strong>Resume:</strong> Available upon request for relevant opportunities
+                    </p>
+                </div>
+
+                <!-- Response Time & Availability -->
+                <div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 2rem; border-radius: 8px; border-left: 4px solid #ff6600; grid-column: 1 / -1;">
+                    <h3 style="color: #003366; margin-bottom: 1rem;">⏱️ Response & Availability</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div>
+                            <p style="margin: 0; font-weight: 600; color: #ff6600;">Email Response Time</p>
+                            <p style="margin: 0.5rem 0 0 0; color: #555;">Typically within 24-48 hours</p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">💼</div>
-                            <div class="contact-text">
-                                <a href="https://linkedin.com/in/sean-mcconoughey" target="_blank">LinkedIn Profile</a>
-                            </div>
+                        <div>
+                            <p style="margin: 0; font-weight: 600; color: #ff6600;">Best Contact Hours</p>
+                            <p style="margin: 0.5rem 0 0 0; color: #555;">9 AM - 6 PM EST, Monday-Friday</p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📄</div>
-                            <div class="contact-text">
-                                <a href="#" onclick="alert('Resume available upon request')">Resume (Available upon request)</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📊</div>
-                            <div class="contact-text">
-                                <span>SciTech Paper: Under review – available post-publication</span>
-                            </div>
+                        <div>
+                            <p style="margin: 0; font-weight: 600; color: #ff6600;">Currently Available For</p>
+                            <p style="margin: 0.5rem 0 0 0; color: #555;">Research collaboration, internship opportunities, academic projects</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3>Send a Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
                 </div>
             </div>
         </div>

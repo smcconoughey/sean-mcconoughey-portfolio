@@ -39,6 +39,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Project card expand/collapse functionality
+function toggleDetails(button) {
+    const projectCard = button.closest('.research-card-content');
+    const details = projectCard.querySelector('.project-details');
+    
+    if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block';
+        button.textContent = 'Read Less';
+        button.classList.add('expanded');
+    } else {
+        details.style.display = 'none';
+        button.textContent = 'Read More';
+        button.classList.remove('expanded');
+    }
+}
+
+// Make toggleDetails function globally available
+window.toggleDetails = toggleDetails;
+
 const portalBlue = document.querySelector('.hero-portal-blue');
 const portalOrange = document.querySelector('.hero-portal-orange');
 
