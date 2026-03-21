@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:erau.edu)",
+      "WebFetch(domain:erpl.space)",
+      "WebFetch(domain:news.erau.edu)",
+      "WebFetch(domain:www.zoominfo.com)",
+      "WebFetch(domain:www.facebook.com)",
+      "Bash(gh api:*)",
+      "Bash(python3 -c \"import sys,json; repos=json.load\\(sys.stdin\\); [print\\(r[''''name''''], r[''''description''''], r[''''html_url'''']\\) for r in repos]\")",
+      "WebFetch(domain:campusgroups.erau.edu)",
+      "WebFetch(domain:commons.erau.edu)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:crowdfunding.erau.edu)",
+      "Bash(gh repo:*)",
+      "Bash(curl -s https://erpl.space)",
+      "Bash(curl:*)"
+    ]
+  }
+}
