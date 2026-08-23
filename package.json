@@ -1,7 +1,7 @@
 {
     "name": "sean-mcconoughey-portfolio",
     "version": "1.0.0",
-    "description": "Sean McConoughey's Aerospace Engineering Portfolio Website",
+    "description": "Sean McConoughey's aerospace, propulsion, test engineering, autonomous systems, and cybersecurity portfolio",
     "main": "index.js",
     "scripts": {
       "dev": "vite",
@@ -13,6 +13,9 @@
       "engineering",
       "portfolio",
       "propulsion",
+      "test engineering",
+      "launch operations",
+      "autonomous systems",
       "cybersecurity",
       "website"
     ],

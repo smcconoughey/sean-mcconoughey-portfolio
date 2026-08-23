@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smcconoughey.github.io/sean-mcconoughey-portfolio/sitemap.xml
