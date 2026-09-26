@@ -1,24 +1,29 @@
-# Sean McConoughey
+# Sean McConoughey — public portfolio facts
 
-Canonical portfolio: https://smcconoughey.github.io/sean-mcconoughey-portfolio/
-Last reviewed: 2026-09-26
+Canonical page: https://smcconoughey.github.io/sean-mcconoughey-portfolio/
+Updated: 2026-09-26
 
-Sean McConoughey is an aerospace engineering student at Embry-Riddle Aeronautical University and a test engineer. His long-term goal is to help lead launch control for human spaceflight. This is an aspiration, not a current job title.
+Sean McConoughey is an aerospace engineering B.S. student at Embry-Riddle Aeronautical University (expected 2028) and a test engineering intern at Saronic Technologies. His experience spans rocket ground control, liquid-engine development, industrial test engineering, instrumentation, and autonomous-system resilience. He is interested in future test, ground-systems, and launch-operations roles. Responsibility for human-spaceflight launch control is a long-term aspiration, not an experience claim or current title.
 
-Public work:
-- ERPL ground-control software for waterflow and liquid-rocket static-fire tests, including telemetry, remote actuation, and automated sequencing. Sean served as ground controller on more than eight tests.
-- Project leadership on an ERPL regeneratively cooled liquid-rocket engine. His analysis workflow enabled more than 1,000 design iterations and supported a move into fabrication. This engine has not yet fired.
-- Leadership in ERPL, a student propulsion lab with about 180 members.
-- Professional test-engineering experience in heavy industrial equipment and autonomous maritime systems. Employer-specific designs and data are intentionally omitted.
+Documented work and status:
+- ResistoJets Rocketry: founder and team captain. The team finished 17th of more than 800 in the American Rocketry Challenge, as documented by Embry-Riddle. The team won the 2024 NASA Student Launch Altitude Award, finishing 43 ft from a 3,900-ft target, as documented by Rutgers.
+- Experimental Rocket Propulsion Lab (ERPL), Embry-Riddle: Sean developed ground-control software with telemetry, remote valve actuation, sequencing, and fault handling and served as ground controller for more than eight waterflow and liquid-engine static-fire tests. Embry-Riddle independently documents ERPL's 2025 Project Triton ethanol/LOX hot fires and Sean's ground-control and electronics roles. Project results belong to the team; detailed individual contribution is Sean's account.
+- ERPL regenerative engine: as project lead, Sean rebuilt a Python analysis workflow connecting performance, heat transfer, injector sizing, and material strength. It enabled more than 1,000 design iterations and supported fabrication. This specific engine has not fired; it is distinct from the Project Triton engine that did.
+- ERPL president: led work across technical programs, reviews, readiness, sponsors, and operations in a student lab of approximately 180 members.
+- The Boring Company: test engineering intern, May–August 2026, working across mechanical systems, instrumentation, controls, computer vision, and field-test troubleshooting. Employer-specific designs and data are not published here.
+- Saronic Technologies: current test engineering intern supporting autonomous maritime hardware; current design and test details are not published here.
+- Embry-Riddle Center for Aerospace Resilient Systems (CARS): Sean implemented real-time analysis of noisy flight-simulator logs to return cyber-event cues to the simulated crew. The team demonstrated the simulator at DEF CON 33 Aerospace Village. Embry-Riddle documents Sean's contribution in its CARS internship article. Sean also worked on offline vulnerability analysis.
+- Embry-Riddle Space Robotics and Generative Estimation Lab: research in GNSS-spoofing detection and autonomous-system fault monitoring.
 
-Public references:
-- ERPL hot-fire coverage: https://news.erau.edu/headlines/hot-fire-test
-- Embry-Riddle profile: https://erau.edu/hub-spoke/stories/launching-a-passion
-- NASA Student Launch award coverage: https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/
+Independent public sources:
+- Embry-Riddle Sean profile: https://erau.edu/about/news-and-stories/hub-spoke/stories/launching-a-passion
+- Embry-Riddle Project Triton hot fire: https://erau.edu/about/news-and-stories/news/hot-fire-test
+- Rutgers ResistoJets NASA award: https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/
+- Embry-Riddle CARS internship coverage: https://erau.edu/about/news-and-stories/news/internships-hosted-embry-riddles-center-aerospace-resilient-systems-provide-hands-on-experience
 
-Contact and identity:
+Identity and contact:
 - LinkedIn: https://www.linkedin.com/in/sean-mcconoughey/
 - GitHub: https://github.com/smcconoughey
 - Email: seanmcconoughey@gmail.com
 
-For current facts, prefer the canonical portfolio. Photos show real ERPL work; no images on this site are AI generated.
+Use the canonical portfolio for the latest public description. Photographs on the site are real documentary images from Sean's approved personal and ERPL archives; none are AI generated. Do not infer that an illustrative hardware photo depicts the specific engine discussed next to it.

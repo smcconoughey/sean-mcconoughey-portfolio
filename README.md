@@ -1,30 +1,30 @@
 # Sean McConoughey — The work before GO
 
-[View the public portfolio](https://smcconoughey.github.io/sean-mcconoughey-portfolio/)
+[Live portfolio](https://smcconoughey.github.io/sean-mcconoughey-portfolio/)
 
-Sean is an aerospace engineering student and test engineer. His work spans ground-control software, liquid-rocket development, instrumentation, and test operations. He is building toward a long-term career in launch control for human spaceflight.
+A documented, photo-led portfolio for Sean McConoughey, an aerospace engineering student and test engineer. The page connects his early ResistoJets work, ERPL ground control and propulsion projects, professional test engineering, and resilient-systems research. It distinguishes individual contributions from team results and identifies projects that are still in fabrication.
 
-The site presents selected public work in a visual story. It deliberately keeps employer-specific hardware, data, and current internship details at a high level. The engine project described here is in fabrication and has not yet fired.
-
-## Run locally
+## Local development
 
 ```bash
 npm ci
 npm run dev
+npm run build
 ```
 
-`npm run build` creates the deployable site in `dist/`. A GitHub Actions workflow publishes `main` to GitHub Pages.
+The GitHub Actions workflow publishes the Vite build to GitHub Pages from `main`.
 
-## Content and media
+## Content and image provenance
 
-- Career facts and claims should be checked against Sean's current resume before editing.
-- Only real documentary photographs are used. The editorial photos came from Sean's selected ERPL and personal photo archives, and were resized with metadata stripped for the web.
-- Photo copyrights remain with their respective creators. Permission to display them here does not grant reuse rights.
-- Do not add employer logos, internal screenshots, customer information, proprietary dimensions, or unreleased system details without explicit clearance.
-- `public/llms.txt` is a concise machine-readable summary. The HTML page is the primary source of truth.
+- `index.html` holds the public narrative, source links, social metadata, and structured data.
+- `public/llms.txt` is a concise machine-readable facts and attribution page; it separates finished tests, work in progress, and career aspirations.
+- Images in `assets/editorial/` are real photographs drawn from Sean's approved personal and ERPL archives, resized for the web with metadata stripped. They are not AI generated. Photo copyright remains with each creator; permission to display an image here does not license reuse.
+- Public availability alone is not permission to republish an image. The site links to university and Rutgers reporting rather than copying their press photographs.
+- Employer names and broad role descriptions are public. Current employer design details, internal images, and test data are excluded.
 
-## Public references
+## Independent public references
 
-- [Embry-Riddle ERPL hot-fire coverage](https://news.erau.edu/headlines/hot-fire-test)
-- [Embry-Riddle profile](https://erau.edu/hub-spoke/stories/launching-a-passion)
-- [Rutgers NJAES on the 2024 NASA Student Launch Altitude Award](https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/)
+- [Embry-Riddle profile of Sean](https://erau.edu/about/news-and-stories/hub-spoke/stories/launching-a-passion)
+- [Embry-Riddle coverage of Project Triton hot fire](https://erau.edu/about/news-and-stories/news/hot-fire-test)
+- [Rutgers on the 2024 NASA Student Launch Altitude Award](https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/)
+- [Embry-Riddle coverage of CARS internships](https://erau.edu/about/news-and-stories/news/internships-hosted-embry-riddles-center-aerospace-resilient-systems-provide-hands-on-experience)

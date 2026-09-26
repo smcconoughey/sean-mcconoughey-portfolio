@@ -16,11 +16,10 @@
         "test engineering",
         "launch operations",
         "ground control",
-        "human spaceflight",
         "website"
     ],
     "author": "Sean McConoughey",
-    "license": "MIT",
+    "license": "UNLICENSED",
     "devDependencies": {
         "vite": "^8.3.1"
     }
