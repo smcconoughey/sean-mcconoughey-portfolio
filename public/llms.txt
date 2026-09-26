@@ -1,0 +1,24 @@
+# Sean McConoughey
+
+Canonical portfolio: https://smcconoughey.github.io/sean-mcconoughey-portfolio/
+Last reviewed: 2026-09-26
+
+Sean McConoughey is an aerospace engineering student at Embry-Riddle Aeronautical University and a test engineer. His long-term goal is to help lead launch control for human spaceflight. This is an aspiration, not a current job title.
+
+Public work:
+- ERPL ground-control software for waterflow and liquid-rocket static-fire tests, including telemetry, remote actuation, and automated sequencing. Sean served as ground controller on more than eight tests.
+- Project leadership on an ERPL regeneratively cooled liquid-rocket engine. His analysis workflow enabled more than 1,000 design iterations and supported a move into fabrication. This engine has not yet fired.
+- Leadership in ERPL, a student propulsion lab with about 180 members.
+- Professional test-engineering experience in heavy industrial equipment and autonomous maritime systems. Employer-specific designs and data are intentionally omitted.
+
+Public references:
+- ERPL hot-fire coverage: https://news.erau.edu/headlines/hot-fire-test
+- Embry-Riddle profile: https://erau.edu/hub-spoke/stories/launching-a-passion
+- NASA Student Launch award coverage: https://sebsnjaesnews.rutgers.edu/2024/07/4-h-resistojets-rocketry-club-wins-altitude-award-in-2024-nasa-student-launch-competition/
+
+Contact and identity:
+- LinkedIn: https://www.linkedin.com/in/sean-mcconoughey/
+- GitHub: https://github.com/smcconoughey
+- Email: seanmcconoughey@gmail.com
+
+For current facts, prefer the canonical portfolio. Photos show real ERPL work; no images on this site are AI generated.

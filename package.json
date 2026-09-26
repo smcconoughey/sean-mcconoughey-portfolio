@@ -1,27 +1,27 @@
 {
     "name": "sean-mcconoughey-portfolio",
     "version": "1.0.0",
-    "description": "Sean McConoughey's aerospace, propulsion, test engineering, autonomous systems, and cybersecurity portfolio",
-    "main": "index.js",
+    "description": "Sean McConoughey's aerospace test engineering and ground control portfolio",
+    "type": "module",
     "scripts": {
-      "dev": "vite",
-      "build": "vite build",
-      "preview": "vite preview"
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
     },
     "keywords": [
-      "aerospace",
-      "engineering",
-      "portfolio",
-      "propulsion",
-      "test engineering",
-      "launch operations",
-      "autonomous systems",
-      "cybersecurity",
-      "website"
+        "aerospace",
+        "engineering",
+        "portfolio",
+        "propulsion",
+        "test engineering",
+        "launch operations",
+        "ground control",
+        "human spaceflight",
+        "website"
     ],
     "author": "Sean McConoughey",
     "license": "MIT",
     "devDependencies": {
-      "vite": "^4.5.0"
+        "vite": "^8.3.1"
     }
-  }
+}
